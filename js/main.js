@@ -1,6 +1,6 @@
 import { getProductJSON } from "./api.js"
 
-let products = {};
+let products = [];
 
 function loadProductsFromJSON() {
 
