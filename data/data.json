@@ -1,31 +1,489 @@
 [
-
     {
         "id": 1,
-        "productName": "Test 1",
-        "count": 12,
-        "price": 19.99
+        "title": "Nutella Hazelnut Spread 750g",
+        "description": "Creamy hazelnut spread with cocoa in a 750g jar.",
+        "category": "Food & Grocery",
+        "count": 45,
+        "stars": 4.8,
+        "price": 65.00
     },
-    
     {
         "id": 2,
-        "productName": "Test 2",
-        "count": 12,
-        "price": 19.99
+        "title": "Lustucru Gnocchi 325g",
+        "description": "Fresh potato gnocchi designed to be pan-fried for a crispy outside and soft inside, 325g.",
+        "category": "Food & Grocery",
+        "count": 30,
+        "stars": 4.6,
+        "price": 24.50
     },
-
     {
         "id": 3,
-        "productName": "Test 3",
-        "count": 12,
-        "price": 19.99
+        "title": "Lustucru Gnocchi 520g",
+        "description": "Maxi family format fresh potato gnocchi for pan-frying, 520g.",
+        "category": "Food & Grocery",
+        "count": 20,
+        "stars": 4.7,
+        "price": 38.00
     },
-
     {
         "id": 4,
-        "productName": "Test 4",
-        "count": 12,
-        "price": 19.99
+        "title": "Pampers Pants S6 (76)",
+        "description": "Easy-on diaper pants with 12-hour leak protection, size 6 (13-18kg), 76 count.",
+        "category": "Baby Care",
+        "count": 15,
+        "stars": 4.9,
+        "price": 195.00
+    },
+    {
+        "id": 5,
+        "title": "Pampers Diapers S4 (116)",
+        "description": "Ultra protection baby diapers with stop & protect pocket, size 4 (9-14kg), 116 count.",
+        "category": "Baby Care",
+        "count": 18,
+        "stars": 4.8,
+        "price": 210.00
+    },
+    {
+        "id": 6,
+        "title": "Pampers Diapers S4+ (108)",
+        "description": "Ultra protection baby diapers for extra absorbency, size 4+ (9-16kg), 108 count.",
+        "category": "Baby Care",
+        "count": 22,
+        "stars": 4.7,
+        "price": 210.00
+    },
+    {
+        "id": 7,
+        "title": "Lipton Peach 4x1.25L",
+        "description": "Refreshing peach flavored iced tea in a convenient pack of four 1.25L bottles.",
+        "category": "Beverages",
+        "count": 50,
+        "stars": 4.5,
+        "price": 45.00
+    },
+    {
+        "id": 8,
+        "title": "Lipton Ice Tea Peach Family Pack",
+        "description": "Multi-pack format of refreshing peach flavored iced tea bottles.",
+        "category": "Beverages",
+        "count": 40,
+        "stars": 4.4,
+        "price": 38.00
+    },
+    {
+        "id": 9,
+        "title": "Lipton Ice Tea Peach Can 33cl",
+        "description": "Individual chilled can of refreshing peach flavored iced tea, 33cl.",
+        "category": "Beverages",
+        "count": 85,
+        "stars": 4.6,
+        "price": 7.50
+    },
+    {
+        "id": 10,
+        "title": "Lipton Peach Zero 1.25L",
+        "description": "Refreshing peach flavored iced tea with zero sugar, 1.25L bottle.",
+        "category": "Beverages",
+        "count": 35,
+        "stars": 4.5,
+        "price": 14.00
+    },
+    {
+        "id": 11,
+        "title": "Lipton Ice Tea Peach 1.25L",
+        "description": "Classic refreshing peach flavored iced tea, 1.25L bottle.",
+        "category": "Beverages",
+        "count": 60,
+        "stars": 4.6,
+        "price": 14.00
+    },
+    {
+        "id": 12,
+        "title": "Barilla Bolognese Sauce 300g",
+        "description": "Traditional Italian tomato and meat pasta sauce made with quality ingredients, 300g jar.",
+        "category": "Food & Grocery",
+        "count": 25,
+        "stars": 4.7,
+        "price": 32.00
+    },
+    {
+        "id": 13,
+        "title": "Nutella B-Ready 6-Pack",
+        "description": "Crispy baked wafer shell filled with creamy Nutella hazelnut cocoa spread, box of 6 bars[cite: 2].",
+        "category": "Food & Grocery",
+        "count": 32,
+        "stars": 4.8,
+        "price": 28.50
+    },
+    {
+        "id": 14,
+        "title": "Smart Air Purifier for Home",
+        "description": "HEPA air purifier capturing 99.97% of dust, pollen, and pet dander, equipped with real-time air quality sensors.",
+        "category": "Home Appliances",
+        "count": 19,
+        "stars": 4.8,
+        "price": 129.99,
+        "imgUrl": "https://picsum.photos/seed/purifier/200/300"
+    },
+    {
+        "id": 15,
+        "title": "Programmable Espresso Machine",
+        "description": "15-bar Italian pump espresso maker with a steam wand for crafting lattes, cappuccinos, and milk foam at home.",
+        "category": "Kitchen",
+        "count": 14,
+        "stars": 4.6,
+        "price": 179.00,
+        "imgUrl": "https://picsum.photos/seed/espresso/200/300"
+    },
+    {
+        "id": 16,
+        "title": "Electric Stainless Steel Kettle",
+        "description": "1.7-liter rapid-boil water kettle featuring auto shut-off, boil-dry protection, and a cordless pouring base.",
+        "category": "Kitchen",
+        "count": 76,
+        "stars": 4.7,
+        "price": 29.99,
+        "imgUrl": "https://picsum.photos/seed/kettle/200/300"
+    },
+    {
+        "id": 17,
+        "title": "Digital Air Fryer 5.8-Quart",
+        "description": "Oil-free countertop convection cooker with 8 preset cooking modes, touchscreen interface, and dishwasher-safe basket.",
+        "category": "Kitchen",
+        "count": 41,
+        "stars": 4.8,
+        "price": 89.95,
+        "imgUrl": "https://picsum.photos/seed/airfryer/200/300"
+    },
+    {
+        "id": 18,
+        "title": "High-Speed Countertop Blender",
+        "description": "1200-watt blender with stainless steel blades for making smoothies, crushing ice, and blending hot soups.",
+        "category": "Kitchen",
+        "count": 22,
+        "stars": 4.5,
+        "price": 74.99,
+        "imgUrl": "https://picsum.photos/seed/blender/200/300"
+    },
+    {
+        "id": 19,
+        "title": "Robot Vacuum Cleaner",
+        "description": "Self-charging robotic vacuum with Wi-Fi connectivity, app mapping controls, and powerful suction for pet hair.",
+        "category": "Home Appliances",
+        "count": 16,
+        "stars": 4.4,
+        "price": 219.99,
+        "imgUrl": "https://picsum.photos/seed/robotvac/200/300"
+    },
+    {
+        "id": 20,
+        "title": "Standing Desk Converter",
+        "description": "Height-adjustable tabletop desk riser supporting dual monitors and keyboard tray for ergonomic working.",
+        "category": "Office & Ergonomics",
+        "count": 27,
+        "stars": 4.6,
+        "price": 149.99,
+        "imgUrl": "https://picsum.photos/seed/standingdesk/200/300"
+    },
+    {
+        "id": 21,
+        "title": "Ergonomic Mesh Office Chair",
+        "description": "Breathable high-back desk chair featuring adjustable lumbar support, 3D armrests, and tilt lock mechanism.",
+        "category": "Office & Ergonomics",
+        "count": 35,
+        "stars": 4.3,
+        "price": 189.99,
+        "imgUrl": "https://picsum.photos/seed/officechair/200/300"
+    },
+    {
+        "id": 22,
+        "title": "Memory Foam Seat Cushion",
+        "description": "Orthopedic seat cushion designed for tailbone pain relief, posture improvement, and long hours of sitting.",
+        "category": "Office & Ergonomics",
+        "count": 88,
+        "stars": 4.5,
+        "price": 24.99,
+        "imgUrl": "https://picsum.photos/seed/cushion/200/300"
+    },
+    {
+        "id": 23,
+        "title": "Dual Monitor Desk Mount",
+        "description": "Heavy-duty full-motion gas spring dual monitor arms fitting screens from 17 to 32 inches with VESA patterns.",
+        "category": "Office & Ergonomics",
+        "count": 52,
+        "stars": 4.7,
+        "price": 45.99,
+        "imgUrl": "https://picsum.photos/seed/monitormount/200/300"
+    },
+    {
+        "id": 24,
+        "title": "Extended Gaming Mouse Pad",
+        "description": "Large stitched-edge desk mat with a non-slip rubber base and micro-texture cloth surface for precise tracking.",
+        "category": "Office & Ergonomics",
+        "count": 130,
+        "stars": 4.8,
+        "price": 15.99,
+        "imgUrl": "https://picsum.photos/seed/mousepad/200/300"
+    },
+    {
+        "id": 25,
+        "title": "Smart Wi-Fi Video Doorbell",
+        "description": "1080p HD video doorbell featuring two-way audio, motion alerts, infrared night vision, and cloud storage compatibility.",
+        "category": "Smart Home & Security",
+        "count": 29,
+        "stars": 4.2,
+        "price": 79.99,
+        "imgUrl": "https://picsum.photos/seed/doorbell/200/300"
+    },
+    {
+        "id": 26,
+        "title": "Outdoor Security Camera 2-Pack",
+        "description": "Weatherproof wireless security cameras with rechargeable batteries, color night vision, and spotlight functionality.",
+        "category": "Smart Home & Security",
+        "count": 18,
+        "stars": 4.6,
+        "price": 139.99,
+        "imgUrl": "https://picsum.photos/seed/outdoorcam/200/300"
+    },
+    {
+        "id": 27,
+        "title": "Smart Wi-Fi Light Bulbs 4-Pack",
+        "description": "Color-changing RGB LED bulbs compatible with Alexa and Google Assistant, no hub required.",
+        "category": "Smart Home & Security",
+        "count": 75,
+        "stars": 4.5,
+        "price": 34.99,
+        "imgUrl": "https://picsum.photos/seed/lightbulbs/200/300"
+    },
+    {
+        "id": 28,
+        "title": "Smart Plug Power Strip",
+        "description": "Wi-Fi surge protector with 4 individually controlled smart outlets and 3 USB ports for automated scheduling.",
+        "category": "Smart Home & Security",
+        "count": 60,
+        "stars": 4.4,
+        "price": 26.99,
+        "imgUrl": "https://picsum.photos/seed/powerstrip/200/300"
+    },
+    {
+        "id": 29,
+        "title": "Bluetooth Label Maker Printer",
+        "description": "Inkless thermal label printer connecting to smartphones for custom barcode, cable, and folder labeling.",
+        "category": "Office & Ergonomics",
+        "count": 43,
+        "stars": 4.3,
+        "price": 29.99,
+        "imgUrl": "https://picsum.photos/seed/labelmaker/200/300"
+    },
+    {
+        "id": 30,
+        "title": "Portable Power Bank 20,000mAh",
+        "description": "High-capacity external battery charger with USB-C Power Delivery fast charging for phones and tablets.",
+        "category": "Power & Accessories",
+        "count": 92,
+        "stars": 4.8,
+        "price": 39.99,
+        "imgUrl": "https://picsum.photos/seed/powerbank/200/300"
+    },
+    {
+        "id": 31,
+        "title": "True Wireless Earbuds",
+        "description": "In-ear wireless earbuds with touch controls, IPX7 waterproofing, and up to 24 hours total playtime with case.",
+        "category": "Audio",
+        "count": 80,
+        "stars": 4.4,
+        "price": 39.95,
+        "imgUrl": "https://picsum.photos/seed/earbuds/200/300"
+    },
+    {
+        "id": 32,
+        "title": "Active Noise Canceling Earbuds",
+        "description": "Premium wireless earbuds featuring adaptive noise reduction, transparency mode, and spatial audio support.",
+        "category": "Audio",
+        "count": 34,
+        "stars": 4.7,
+        "price": 129.99,
+        "imgUrl": "https://picsum.photos/seed/anc-earbuds/200/300"
+    },
+    {
+        "id": 33,
+        "title": "Bone Conduction Headphones",
+        "description": "Open-ear wireless headphones using bone conduction technology for situational awareness during running and cycling.",
+        "category": "Audio",
+        "count": 21,
+        "stars": 4.3,
+        "price": 89.99,
+        "imgUrl": "https://picsum.photos/seed/bone-headphones/200/300"
+    },
+    {
+        "id": 34,
+        "title": "Foldable Drone with 4K Camera",
+        "description": "Compact quadcopter with altitude hold, trajectory flight, GPS auto-return, and real-time FPV video transmission.",
+        "category": "Cameras & Drones",
+        "count": 15,
+        "stars": 4.2,
+        "price": 199.99,
+        "imgUrl": "https://picsum.photos/seed/drone/200/300"
+    },
+    {
+        "id": 35,
+        "title": "Action Camera 4K 60FPS",
+        "description": "Waterproof action camera with electronic image stabilization, dual screens, and remote control accessories.",
+        "category": "Cameras & Drones",
+        "count": 26,
+        "stars": 4.5,
+        "price": 99.99,
+        "imgUrl": "https://picsum.photos/seed/actioncam/200/300"
+    },
+    {
+        "id": 36,
+        "title": "Phone Gimbal Stabilizer",
+        "description": "Handheld video stabilizer featuring AI tracking, gesture control, and integrated extension rod for vlogging.",
+        "category": "Cameras & Drones",
+        "count": 19,
+        "stars": 4.6,
+        "price": 89.00,
+        "imgUrl": "https://picsum.photos/seed/gimbal/200/300"
+    },
+    {
+        "id": 37,
+        "title": "Dimmable LED Ring Light 10-Inch",
+        "description": "Selfie ring light with tripod stand and phone holder, offering 3 light modes and 10 brightness levels.",
+        "category": "Cameras & Drones",
+        "count": 67,
+        "stars": 4.4,
+        "price": 22.99,
+        "imgUrl": "https://picsum.photos/seed/ringlight/200/300"
+    },
+    {
+        "id": 38,
+        "title": "Electric Deep Tissue Massage Gun",
+        "description": "Percussion muscle massager with 6 interchangeable heads and 30 speed levels for athlete recovery and back relief.",
+        "category": "Health & Fitness",
+        "count": 55,
+        "stars": 4.7,
+        "price": 59.99,
+        "imgUrl": "https://picsum.photos/seed/massagegun/200/300"
+    },
+    {
+        "id": 39,
+        "title": "Non-Slip Yoga Mat 6mm",
+        "description": "Eco-friendly TPE exercise mat with alignment lines, optimal cushioning, and an included carrying strap.",
+        "category": "Health & Fitness",
+        "count": 73,
+        "stars": 4.6,
+        "price": 28.99,
+        "imgUrl": "https://picsum.photos/seed/yogamat/200/300"
+    },
+    {
+        "id": 40,
+        "title": "Adjustable Dumbbells 55lb",
+        "description": "Single selectorized dumbbell replacing 15 weight sets, easily adjusting from 5 to 52.5 lbs in 2.5-lb increments.",
+        "category": "Health & Fitness",
+        "count": 10,
+        "stars": 4.9,
+        "price": 199.00,
+        "imgUrl": "https://picsum.photos/seed/dumbbell/200/300"
+    },
+    {
+        "id": 41,
+        "title": "Resistance Bands Set of 5",
+        "description": "Heavy-duty workout bands with handles, door anchor, and ankle straps, offering up to 150 lbs of resistance.",
+        "category": "Health & Fitness",
+        "count": 115,
+        "stars": 4.5,
+        "price": 19.95,
+        "imgUrl": "https://picsum.photos/seed/resistancebands/200/300"
+    },
+    {
+        "id": 42,
+        "title": "Insulated Water Bottle",
+        "description": "32 oz vacuum-insulated flask keeping drinks cold for 24 hours or hot for 12 hours, complete with straw lid.",
+        "category": "Outdoor & Camping",
+        "count": 140,
+        "stars": 4.8,
+        "price": 21.99,
+        "imgUrl": "https://picsum.photos/seed/waterbottle/200/300"
+    },
+    {
+        "id": 43,
+        "title": "Camping Backpack 50L",
+        "description": "Lightweight waterproof hiking daypack with rain cover, trekking pole attachments, and breathable mesh padding.",
+        "category": "Outdoor & Camping",
+        "count": 33,
+        "stars": 4.6,
+        "price": 54.99,
+        "imgUrl": "https://picsum.photos/seed/backpack/200/300"
+    },
+    {
+        "id": 44,
+        "title": "Ultralight Camping Hammock",
+        "description": "Double hammock made of 210T parachute nylon, supporting up to 500 lbs and including tree straps and carabiners.",
+        "category": "Outdoor & Camping",
+        "count": 62,
+        "stars": 4.7,
+        "price": 25.99,
+        "imgUrl": "https://picsum.photos/seed/hammock/200/300"
+    },
+    {
+        "id": 45,
+        "title": "Rechargeable LED Headlamp",
+        "description": "1000-lumen super bright headlight with motion sensor mode, 230-degree wide beam, and lightweight design.",
+        "category": "Outdoor & Camping",
+        "count": 89,
+        "stars": 4.5,
+        "price": 16.99,
+        "imgUrl": "https://picsum.photos/seed/headlamp/200/300"
+    },
+    {
+        "id": 46,
+        "title": "Cast Iron Skillet 10.25-Inch",
+        "description": "Pre-seasoned cast iron frying pan ideal for searing, baking, braising, broiling, and frying on all cooktops.",
+        "category": "Kitchen",
+        "count": 48,
+        "stars": 4.8,
+        "price": 24.90,
+        "imgUrl": "https://picsum.photos/seed/castiron/200/300"
+    },
+    {
+        "id": 47,
+        "title": "Digital Food Kitchen Scale",
+        "description": "Precision culinary scale measuring up to 11 lbs in 1g increments with tare function and backlit LCD display.",
+        "category": "Kitchen",
+        "count": 105,
+        "stars": 4.6,
+        "price": 12.99,
+        "imgUrl": "https://picsum.photos/seed/kitchenscale/200/300"
+    },
+    {
+        "id": 48,
+        "title": "Electric Wine Opener",
+        "description": "Automatic cordless corkscrew removing corks in seconds, featuring foil cutter and stylish blue LED light.",
+        "category": "Kitchen",
+        "count": 51,
+        "stars": 4.4,
+        "price": 18.99,
+        "imgUrl": "https://picsum.photos/seed/wineopener/200/300"
+    },
+    {
+        "id": 49,
+        "title": "French Press Coffee Maker",
+        "description": "Heat-resistant borosilicate glass coffee press with 4-level filtration system and 34 oz capacity.",
+        "category": "Kitchen",
+        "count": 68,
+        "stars": 4.7,
+        "price": 22.50,
+        "imgUrl": "https://picsum.photos/seed/frenchpress/200/300"
+    },
+    {
+        "id": 50,
+        "title": "Cold Brew Maker 1qt",
+        "description": "Durable glass pitcher with fine mesh stainless steel filter for brewing smooth, low-acid cold coffee concentrate.",
+        "category": "Kitchen",
+        "count": 44,
+        "stars": 4.8,
+        "price": 27.99,
+        "imgUrl": "https://picsum.photos/seed/coldbrew/200/300"
     }
-
 ]
