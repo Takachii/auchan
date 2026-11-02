@@ -1,7 +1,12 @@
 import { getProductJSON } from "./api.js"
 import { requestPaginationRenderItems } from "./ui.js"
+import {} from "./cart.js"
 
 let products = [];
+
+export function getProducts() {
+    return products;
+}
 
 function fetchProducts() {
 
