@@ -1,3 +1,5 @@
+import { getProducts } from "./main.js"
+
 function getRenderStoreItemsByType(type, data) {
     if (type === "grid") {
 
@@ -70,7 +72,7 @@ function getRenderStoreItemsByType(type, data) {
 
 export function requestPaginationRenderItems(products, targetPage, itemsPerPage) {
 
-    let currentFilter = "";
+    const currentFilter = document.getElementById("input-items-search").value;
 
     const element_store_products_grid = document.getElementById("grid-store-products");
     const element_store_products_category = document.getElementById("cat-store-products");
@@ -112,7 +114,7 @@ export function requestPaginationRenderItems(products, targetPage, itemsPerPage)
         pageBtn.className = "hover:shadow-xl rounded-full p-4 cursor-pointer";
         
         if (i === targetPage) {
-            pageBtn.classList.add("bg-gray-200");
+            pageBtn.classList.add("bg-gray-100");
         }
 
         pageBtn.textContent = i;
@@ -142,6 +144,11 @@ export function requestPaginationRenderItems(products, targetPage, itemsPerPage)
 
     return true;
 }
+
+const input_pagination_search = document.getElementById("input-items-search");
+input_pagination_search.addEventListener("input", () => {
+    requestPaginationRenderItems(getProducts(), 1, 12);
+})
 
 const btn_listVeiwCategory = document.getElementById("btn-listView-category");
 const btn_listVeiwGridlist = document.getElementById("btn-listView-gridlist");
