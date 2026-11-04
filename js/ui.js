@@ -1,11 +1,12 @@
-import { getProducts } from "./main.js"
+import { getProducts, getProductFromID } from "./main.js"
+import { addProductToCart } from "./cart.js"
 
 function getRenderStoreItemsByType(type, data) {
     if (type === "grid") {
 
         return `
     
-            <div class="flex justify-between bg-white rounded-2xl p-4 shadow-md cursor-grab" draggable="true">
+            <div data-productid="${data.id}" class="flex justify-between bg-white rounded-2xl p-4 shadow-md cursor-grab" draggable="true">
     
                 <div class="flex items-center gap-4">
     
@@ -29,7 +30,8 @@ function getRenderStoreItemsByType(type, data) {
                     <p class="text-xs shrink-0 ml-1">(${data.stars})</p>
                 </div>
     
-                <div class="flex items-center mr-3">
+                <div class="flex flex-col justify-between items-end mr-3">
+                    <svg class="mt-2 hover:fill-red-400 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="22px" width="22px" fill="red"><path d="M5.59,21.41Q5,20.83 5,20t0.59-1.41T7,18q0.83,0 1.41,0.59Q9,19.18 9,20T8.41,21.41Q7.83,22 7,22T5.59,21.41Zm10,0Q15,20.83 15,20t0.59-1.41T17,18t1.41,0.59Q19,19.18 19,20t-0.59,1.41T17,22t-1.41-0.59ZM5.2,4H19.95q0.57,0 0.88,0.51t0.02,1.04l-3.55,6.4q-0.27,0.5-0.74,0.78T15.55,13H8.1L7,15H19v2H7q-1.13,0-1.7-0.99q-0.58-0.99-0.05-1.96L6.6,11.6L3,4H1V2H4.25L5.2,4Z"/></svg>    
                     <span class="text-green-700 font-bold text-2xl">${data.price} DH</span>
                 </div>
     
@@ -39,7 +41,7 @@ function getRenderStoreItemsByType(type, data) {
     }
 
     return `
-        <div class="bg-white rounded-2xl p-4 shadow-md flex flex-col justify-between cursor-grab" draggable="true">
+        <div data-productid="${data.id}" class="bg-white rounded-2xl p-4 shadow-md flex flex-col justify-between cursor-grab" draggable="true">
 
             <div>
 
@@ -62,8 +64,9 @@ function getRenderStoreItemsByType(type, data) {
 
             </div>
 
-            <div class="mt-3">
+            <div class="flex justify-between items-center mt-3">
                 <span class="text-green-700 font-bold text-2xl">${data.price} DH</span>
+                <svg class="hover:fill-red-400 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="22px" width="22px" fill="red"><path d="M5.59,21.41Q5,20.83 5,20t0.59-1.41T7,18q0.83,0 1.41,0.59Q9,19.18 9,20T8.41,21.41Q7.83,22 7,22T5.59,21.41Zm10,0Q15,20.83 15,20t0.59-1.41T17,18t1.41,0.59Q19,19.18 19,20t-0.59,1.41T17,22t-1.41-0.59ZM5.2,4H19.95q0.57,0 0.88,0.51t0.02,1.04l-3.55,6.4q-0.27,0.5-0.74,0.78T15.55,13H8.1L7,15H19v2H7q-1.13,0-1.7-0.99q-0.58-0.99-0.05-1.96L6.6,11.6L3,4H1V2H4.25L5.2,4Z"/></svg>
             </div>
 
         </div>
@@ -176,5 +179,24 @@ btn_listVeiwGridlist.addEventListener("click", () => {
 
     btn_listVeiwGridlist.className = "p-2 bg-white text-red-600 rounded-md shadow-xs hover:bg-gray-50 cursor-pointer"
     btn_listVeiwCategory.className = "p-2 bg-transparent text-gray-500 hover:text-gray-800 rounded-md cursor-pointer"
+
+})
+
+const container_list_products = document.getElementById("container-list-products");
+container_list_products.addEventListener("click", (event) => {
+
+    const container_list_target = event.target.closest("[data-productid]");
+    if (!container_list_target) return false;
+
+    if (event.target && event.target.tagName === "path") {
+
+        event.stopPropagation();
+
+        const productID = Number(container_list_target.dataset.productid)
+        if (!productID) return false;
+
+        addProductToCart(getProductFromID(productID))
+
+    }
 
 })
