@@ -42,7 +42,7 @@
 
     <main class="flex flex-row-reverse">
 
-        <aside id="aside-store-carte" class="hidden flex w-100 h-full flex-col bg-white shadow-xl">
+        <aside id="aside-store-carte" class="hidden flex w-100 sticky top-0 h-dvh flex-col bg-white shadow-xl">
 
             <div class="flex items-center justify-between p-4 border-b border-gray-100">
                 
@@ -54,42 +54,17 @@
 
             </div>
 
-            <ul class="max-h-dvh overflow-y-auto">
-
+            <ul id="list-cart-items" class="h-dvh overflow-y-auto">
                 <li>
                     <div class="flex justify-center items-center bg-gray-100 m-3 rounded-md">
                         <h3 class="text-sm font-medium text-gray-900 m-10">Drop Your Item Here !</h3>
                     </div>
                 </li>
-
-                <li>
-
-                    <div class="flex justify-between pl-0.5 pr-4">
-
-                        <div class="flex items-center">
-                            
-                            <img src="assets/images/item_1.jpg" alt="item image" class="h-16 w-16 bg-gray-200" />
-
-                            <div>
-                                <h3 class="text-sm font-medium text-gray-900">Product Title 1</h3>
-                                <p class="text-sm text-gray-500">$29.99</p>
-                            </div>
-
-                        </div>
-
-                        <button class="text-gray-400 hover:text-gray-500 cursor-pointer">
-                            &#x2715;
-                        </button>
-
-                    </div>
-
-                </li>
-
             </ul>
             
             <div class="border-t border-gray-100 p-4 bg-gray-50">
                 <button class="w-full rounded-md p-2 text-sm font-semibold text-white bg-red-600 hover:bg-red-500 shadow-sm cursor-pointer">
-                    Checkout 29.99 DH
+                    Checkout
                 </button>
             </div>
 
@@ -147,23 +122,25 @@
                 </div>
             </section>
 
-            <section class="mt-8">
+            <section>
+                <div id="container-list-products" class="mt-8">
 
-                <div id="grid-store-products" class="hidden grid gap-4 grid-cols-1">
+                    <div id="grid-store-products" class="hidden grid gap-4 grid-cols-1">
+
+                    </div>
+
+                    <div id="cat-store-products" class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+
+                    </div>
 
                 </div>
-
-                <div id="cat-store-products" class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
-
-                </div>
-
             </section>
 
         </section>
 
     </main>
-    
-    <div class="sticky bottom-0 mt-8">
+
+    <div class="mt-7">
         <div id="pagination-store-products" class="flex justify-center items-center gap-2 mt-2 bg-white py-4 shadow-md">
         
         </div>
