@@ -146,8 +146,6 @@ export function requestPaginationRenderItems(products, targetPage, itemsPerPage)
 
     }
 
-    requestLoadDragDropEvents();
-
     return true;
 }
 
@@ -203,3 +201,5 @@ container_list_products.addEventListener("click", (event) => {
     }
 
 })
+
+requestLoadDragDropEvents();

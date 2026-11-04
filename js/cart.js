@@ -53,7 +53,7 @@ export function addProductToCart(data) {
     if (productCartObject) {
 
         productCartObject.count++;
-
+        
         const text_cartProduct = document.querySelectorAll("[data-cartcountprice]");
         text_cartProduct.forEach(element => {
             if (Number(element.dataset.cartcountprice) === data.id)

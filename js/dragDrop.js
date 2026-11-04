@@ -21,6 +21,8 @@ export function requestLoadDragDropEvents() {
         if (dropZone) {
             event.preventDefault();
             const productId = event.dataTransfer.getData("productID");
+            if (!productId) return false;
+            console.log("HELO")
             addProductToCart(getProductFromID(Number(productId)));
         }
     });
