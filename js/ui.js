@@ -1,11 +1,12 @@
 import { getProducts, getProductFromID } from "./main.js"
 import { addProductToCart } from "./cart.js"
+import { requestLoadDragDropEvents } from "./dragDrop.js"
 
 function getRenderStoreItemsByType(type, data) {
     if (type === "grid") {
 
         return `
-    
+
             <div data-productid="${data.id}" class="flex justify-between bg-white rounded-2xl p-4 shadow-md cursor-grab" draggable="true">
     
                 <div class="flex items-center gap-4">
@@ -144,6 +145,8 @@ export function requestPaginationRenderItems(products, targetPage, itemsPerPage)
         element_pagination_store_products.appendChild(nextBtn);
 
     }
+
+    requestLoadDragDropEvents();
 
     return true;
 }
