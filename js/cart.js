@@ -19,7 +19,7 @@ function requestRenderCartItem(data) {
 
                     <div class="ml-2">
                         <h3 class="text-sm font-medium text-gray-900 text-wrap">${data.title}</h3>
-                        <p data-cartcountprice="${data.id}" class="text-sm text-gray-500">X1 | ${data.price} DH</p>
+                        <p data-cartcountprice="${data.id}" class="text-sm text-gray-500">X1 | ${(data.price).toFixed(2)} DH</p>
                     </div>
 
                 </div>
@@ -51,8 +51,9 @@ export function addProductToCart(data) {
 
     const productCartObject = getCartProductFromID(data.id);
     if (productCartObject) {
+
         productCartObject.count++;
-        
+
         const text_cartProduct = document.querySelectorAll("[data-cartcountprice]");
         text_cartProduct.forEach(element => {
             if (Number(element.dataset.cartcountprice) === data.id)
