@@ -57,7 +57,7 @@ export function addProductToCart(data) {
         const text_cartProduct = document.querySelectorAll("[data-cartcountprice]");
         text_cartProduct.forEach(element => {
             if (Number(element.dataset.cartcountprice) === data.id)
-                element.textContent = `X${productCartObject.count} | ${data.price * productCartObject.count} DH`
+                element.textContent = `X${productCartObject.count} | ${(data.price * productCartObject.count).toFixed(2)} DH`
         });
 
         return true;
