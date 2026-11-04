@@ -8,6 +8,11 @@ export function getProducts() {
     return products;
 }
 
+export function getProductFromID(id) {
+    for (const value of products)
+        if (value.id === id) return value;
+}
+
 function fetchProducts() {
 
     getProductJSON().then(results => {
