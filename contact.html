@@ -40,13 +40,44 @@
         </div>
     </header>
 
-    <main class="mx-auto px-4">
+    <main>
 
-        <section>
+        <section class="my-14 px-4">
+
+            <div class="flex flex-col inset-0 items-center justify-center gap-10">
+
+                <div class="flex flex-col justify-between items-center gap-4">
+                    <h2 class="font-bold text-5xl">Contactez-nous</h2>
+                    <p class="font-semibold text-md">Contactez-nous pour obtenir une consultation directe et pour toute demande de renseignements</p>
+                </div>
+
+                <form class="flex flex-col justify-between w-full max-w-2xl overflow-hidden gap-2">
+
+                    <label for="input-contact-name">Nom complet</label>
+                    <input id="input-contact-name" class="p-2 bg-white rounded-lg border border-gray-200 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-100 shadow-2xs focus:outline-none" type="text" placeholder="ex: Hamza Elamyn" required>
+
+                    <label for="input-contact-email">Adresse E-Mail</label>
+                    <input id="input-contact-email" class="p-2 bg-white rounded-lg border border-gray-200 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-100 shadow-2xs focus:outline-none" type="text" placeholder="ex: youremail@mail.com" required>
+
+                    <label for="input-contact-phone">Numéro de téléphone</label>
+                    <input id="input-contact-phone" class="p-2 bg-white rounded-lg border border-gray-200 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-100 shadow-2xs focus:outline-none" type="phone" placeholder="+212 6 XX XX XX XX" required>
+
+                    <label for="input-contact-message">Votre Message</label>
+                    <textarea id="input-contact-message" rows="5" class="p-2 bg-white rounded-lg border border-gray-200 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-100 shadow-2xs focus:outline-none" type="text" placeholder="Parlez-nous de vos objectifs .." required></textarea>
+
+                    <div class="flex justify-between gap-1 mt-4">
+                        <button id="btn-contact-submit" class="bg-red-500 hover:bg-red-600 text-white p-3 rounded-full text-xs font-semibold cursor-pointer" type="submit">Envoyer le message</button>
+                        <button id="btn-contact-fetch" class="bg-red-500 hover:bg-red-600 text-white p-3 rounded-full text-xs font-semibold cursor-pointer" type="button">Fetch Radnom Data</button>
+                    </div>
+
+                </form>
+            </div>
 
         </section>
 
     </main>
+
+    <script type="module" src="js/main.js"></script>
 
 </body>
 </html>
