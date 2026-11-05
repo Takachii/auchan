@@ -1,6 +1,7 @@
-import { getProductJSON } from "./api.js"
-import { requestPaginationRenderItems } from "./ui.js"
-import {} from "./cart.js"
+import { getProductJSON } from "./api.js";
+import { requestPaginationRenderItems } from "./ui.js";
+import {} from "./cart.js";
+import { loadEventsContact } from "./contact.js";
 
 let products = [];
 
@@ -23,4 +24,7 @@ function fetchProducts() {
 
 }
 
-fetchProducts();
+document.addEventListener("DOMContentLoaded", () => {
+    fetchProducts();
+    loadEventsContact();
+});

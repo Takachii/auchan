@@ -76,10 +76,13 @@ function getRenderStoreItemsByType(type, data) {
 
 export function requestPaginationRenderItems(products, targetPage, itemsPerPage) {
 
-    const currentFilter = document.getElementById("input-items-search").value;
+    const input_items_search = document.getElementById("input-items-search")
+    const currentFilter = input_items_search ? input_items_search.value : "";
 
     const element_store_products_grid = document.getElementById("grid-store-products");
+    if (!element_store_products_grid) return false;
     const element_store_products_category = document.getElementById("cat-store-products");
+    if (!element_store_products_category) return false;
 
     const filtered = products.filter(product => product.title.toLowerCase().includes(currentFilter));
     const start = (targetPage - 1) * itemsPerPage;
@@ -150,56 +153,69 @@ export function requestPaginationRenderItems(products, targetPage, itemsPerPage)
 }
 
 const input_pagination_search = document.getElementById("input-items-search");
-input_pagination_search.addEventListener("input", () => {
-    requestPaginationRenderItems(getProducts(), 1, 12);
-})
+if (input_pagination_search) {
+
+    input_pagination_search.addEventListener("input", () => {
+        requestPaginationRenderItems(getProducts(), 1, 12);
+    })
+
+}
 
 const btn_listVeiwCategory = document.getElementById("btn-listView-category");
 const btn_listVeiwGridlist = document.getElementById("btn-listView-gridlist");
 
-btn_listVeiwCategory.addEventListener("click", () => {
+if (btn_listVeiwCategory && btn_listVeiwGridlist) {
+
+    btn_listVeiwCategory.addEventListener("click", () => {
+        
+        const element_grid = document.getElementById("grid-store-products");
+        element_grid.classList.add("hidden");
     
-    const element_grid = document.getElementById("grid-store-products");
-    element_grid.classList.add("hidden");
-
-    const element_category = document.getElementById("cat-store-products");
-    element_category.classList.remove("hidden");
-
-    btn_listVeiwCategory.className = "p-2 bg-white text-red-600 rounded-md shadow-xs hover:bg-gray-50 cursor-pointer"
-    btn_listVeiwGridlist.className = "p-2 bg-transparent text-gray-500 hover:text-gray-800 rounded-md cursor-pointer"
-
-})
-
-btn_listVeiwGridlist.addEventListener("click", () => {
+        const element_category = document.getElementById("cat-store-products");
+        element_category.classList.remove("hidden");
     
-    const element_grid = document.getElementById("grid-store-products");
-    element_grid.classList.remove("hidden");
+        btn_listVeiwCategory.className = "p-2 bg-white text-red-600 rounded-md shadow-xs hover:bg-gray-50 cursor-pointer"
+        btn_listVeiwGridlist.className = "p-2 bg-transparent text-gray-500 hover:text-gray-800 rounded-md cursor-pointer"
+    
+    })
 
-    const element_category = document.getElementById("cat-store-products");
-    element_category.classList.add("hidden");
 
-    btn_listVeiwGridlist.className = "p-2 bg-white text-red-600 rounded-md shadow-xs hover:bg-gray-50 cursor-pointer"
-    btn_listVeiwCategory.className = "p-2 bg-transparent text-gray-500 hover:text-gray-800 rounded-md cursor-pointer"
+    btn_listVeiwGridlist.addEventListener("click", () => {
+        
+        const element_grid = document.getElementById("grid-store-products");
+        element_grid.classList.remove("hidden");
 
-})
+        const element_category = document.getElementById("cat-store-products");
+        element_category.classList.add("hidden");
+
+        btn_listVeiwGridlist.className = "p-2 bg-white text-red-600 rounded-md shadow-xs hover:bg-gray-50 cursor-pointer"
+        btn_listVeiwCategory.className = "p-2 bg-transparent text-gray-500 hover:text-gray-800 rounded-md cursor-pointer"
+
+    })
+
+}
 
 const container_list_products = document.getElementById("container-list-products");
-container_list_products.addEventListener("click", (event) => {
+if (container_list_products) {
 
-    const container_list_target = event.target.closest("[data-productid]");
-    if (!container_list_target) return false;
+    container_list_products.addEventListener("click", (event) => {
+    
+        const container_list_target = event.target.closest("[data-productid]");
+        if (!container_list_target) return false;
+    
+        if (event.target && (event.target.tagName === "path" || event.target.tagName === "svg")) {
+    
+            event.stopPropagation();
+    
+            const productID = Number(container_list_target.dataset.productid)
+            if (!productID) return false;
+    
+            addProductToCart(getProductFromID(productID))
+    
+        }
+    
+    })
 
-    if (event.target && (event.target.tagName === "path" || event.target.tagName === "svg")) {
-
-        event.stopPropagation();
-
-        const productID = Number(container_list_target.dataset.productid)
-        if (!productID) return false;
-
-        addProductToCart(getProductFromID(productID))
-
-    }
-
-})
+}
 
 requestLoadDragDropEvents();

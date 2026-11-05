@@ -1,12 +1,16 @@
 const cartProducts = [];
 
 const div_navbar_carte = document.getElementById("div-store-carte");
-div_navbar_carte.addEventListener("click", () => {
+if (div_navbar_carte) {
 
-    const element_asied_carte = document.getElementById("aside-store-carte");
-    element_asied_carte.classList.toggle("hidden");
+    div_navbar_carte.addEventListener("click", () => {
+    
+        const element_asied_carte = document.getElementById("aside-store-carte");
+        element_asied_carte.classList.toggle("hidden");
+    
+    });
 
-});
+}
 
 function requestRenderCartItem(data) {
     return `
@@ -84,14 +88,18 @@ function removeProductFromCartByID(productID) {
 }
 
 const list_cart_items = document.getElementById("list-cart-items");
-list_cart_items.addEventListener("click", (event) => {
+if (list_cart_items) {
 
-    const li_cart_item = event.target.closest(".li-cart-items");
-    if (!li_cart_item) return false;
+    list_cart_items.addEventListener("click", (event) => {
+    
+        const li_cart_item = event.target.closest(".li-cart-items");
+        if (!li_cart_item) return false;
+    
+        if (event.target && event.target.tagName === "BUTTON") {
+            removeProductFromCartByID(event.target.id);
+            li_cart_item.remove();
+        }
+    
+    })
 
-    if (event.target && event.target.tagName === "BUTTON") {
-        removeProductFromCartByID(event.target.id);
-        li_cart_item.remove();
-    }
-
-})
+}
