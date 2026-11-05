@@ -189,7 +189,7 @@ container_list_products.addEventListener("click", (event) => {
     const container_list_target = event.target.closest("[data-productid]");
     if (!container_list_target) return false;
 
-    if (event.target && event.target.tagName === "path") {
+    if (event.target && (event.target.tagName === "path" || event.target.tagName === "svg")) {
 
         event.stopPropagation();
 
