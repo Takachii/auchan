@@ -78,13 +78,19 @@ export function requestPaginationRenderItems(products, targetPage, itemsPerPage)
 
     const input_items_search = document.getElementById("input-items-search")
     const currentFilter = input_items_search ? input_items_search.value : "";
+    const select_items_category = document.getElementById("select-items-category");
+    const currentCategory = select_items_category ? select_items_category.value : "";
 
     const element_store_products_grid = document.getElementById("grid-store-products");
     if (!element_store_products_grid) return false;
     const element_store_products_category = document.getElementById("cat-store-products");
     if (!element_store_products_category) return false;
 
-    const filtered = products.filter(product => product.title.toLowerCase().includes(currentFilter));
+    const filtered = products.filter(product => {
+        const matchesTitle = product.title.toLowerCase().includes(currentFilter.toLowerCase());
+        const matchesCategory = currentCategory === "" || product.category === currentCategory;
+        return matchesTitle && matchesCategory;
+    });
     const start = (targetPage - 1) * itemsPerPage;
     const pageProducts = filtered.slice(start, start + itemsPerPage);
 
@@ -156,6 +162,15 @@ const input_pagination_search = document.getElementById("input-items-search");
 if (input_pagination_search) {
 
     input_pagination_search.addEventListener("input", () => {
+        requestPaginationRenderItems(getProducts(), 1, 12);
+    })
+
+}
+
+const select_pagination_category = document.getElementById("select-items-category");
+if (select_pagination_category) {
+
+    select_pagination_category.addEventListener("change", () => {
         requestPaginationRenderItems(getProducts(), 1, 12);
     })
 
