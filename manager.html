@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
-    
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    
+
     <title>Auchan | Panel Manager</title>
 
 </head>
+
 <body class="bg-gray-100 text-gray-800 antialiased font-sans">
 
     <header class="px-4 bg-white shadow-xs border-b border-gray-200">
@@ -24,14 +26,17 @@
 
             <div class="flex items-center gap-10">
                 <nav class="flex gap-6">
-                    <a class="font-medium text-black hover:text-red-600" href="manager.html">Manager (Hidden)</a>
+                    <a class="font-medium text-red-600 hover:text-red-700" href="manager.html">Manager (Hidden)</a>
                     <a class="font-medium text-black hover:text-red-600" href="index.html">Products</a>
                     <a class="font-medium text-black hover:text-red-600" href="contact.html">Contactez-nous</a>
                 </nav>
 
-                <div class="flex items-center gap-2 border border-gray-200 hover:border-red-600 bg-gray-50 hover:bg-red-50/50 rounded-lg cursor-pointer px-3 py-2">
-                    <svg class="w-6 h-6 text-red-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
-                        <path d="M200-80q-33 0-56.5-23.5T120-160v-480q0-33 23.5-56.5T200-720h80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720h80q33 0 56.5 23.5T840-640v480q0 33-23.5 56.5T760-80H200Zm0-80h560v-480H200v480Zm421.5-298.5Q680-517 680-600h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85h-80q0 83 58.5 141.5T480-400q83 0 141.5-58.5ZM360-720h240q0-50-35-85t-85-35q-50 0-85 35t-35 85ZM200-160v-480 480Z"/>
+                <div
+                    class="flex items-center gap-2 border border-gray-200 hover:border-red-600 bg-gray-50 hover:bg-red-50/50 rounded-lg cursor-pointer px-3 py-2">
+                    <svg class="w-6 h-6 text-red-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                        fill="currentColor">
+                        <path
+                            d="M200-80q-33 0-56.5-23.5T120-160v-480q0-33 23.5-56.5T200-720h80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720h80q33 0 56.5 23.5T840-640v480q0 33-23.5 56.5T760-80H200Zm0-80h560v-480H200v480Zm421.5-298.5Q680-517 680-600h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85h-80q0 83 58.5 141.5T480-400q83 0 141.5-58.5ZM360-720h240q0-50-35-85t-85-35q-50 0-85 35t-35 85ZM200-160v-480 480Z" />
                     </svg>
                     <span class="font-bold text-red-600">0.00 DH</span>
                 </div>
@@ -40,10 +45,182 @@
         </div>
     </header>
 
-    <main class="mx-auto px-4">
+    <main class="mx-auto px-4 max-w-7xl py-8">
 
-        <section class="mt-6">
+        <section class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+                <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">Tableau de Bord Manager</h1>
+            </div>
+            <div>
+                <button id="btn-open-add-modal"
+                    class="flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-semibold px-4 py-2.5 rounded-lg shadow-sm cursor-pointer transition-colors text-sm">
+                    Ajouter un produit
+                </button>
+            </div>
+        </section>
 
+        <section
+            class="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 bg-white p-4 rounded-xl border border-gray-200 shadow-2xs mb-6">
+            <div
+                class="flex flex-1 items-center gap-2 px-3 py-2 bg-gray-50 rounded-lg border border-gray-200 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-100 shadow-2xs">
+                <svg class="w-5 h-5 text-gray-400 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                    fill="currentColor">
+                    <path
+                        d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                </svg>
+                <input id="input-manager-search" class="focus:outline-none w-full bg-transparent text-sm" type="text"
+                    placeholder="Recherche par nom ou description...">
+            </div>
+            <div>
+                <select id="select-manager-category"
+                    class="w-full sm:w-auto px-4 py-2 bg-gray-50 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100 shadow-2xs cursor-pointer">
+                    <option value="">Toutes les catégories</option>
+                    <option value="Food & Grocery">Food & Grocery</option>
+                    <option value="Baby Care">Baby Care</option>
+                    <option value="Kitchen">Kitchen</option>
+                    <option value="Office & Ergonomics">Office & Ergonomics</option>
+                    <option value="Beverages">Beverages</option>
+                    <option value="Smart Home & Security">Smart Home & Security</option>
+                    <option value="Cameras & Drones">Cameras & Drones</option>
+                    <option value="Health & Fitness">Health & Fitness</option>
+                    <option value="Outdoor & Camping">Outdoor & Camping</option>
+                    <option value="Power & Accessories">Power & Accessories</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-xl border border-gray-200 shadow-2xs overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr
+                            class="border-b border-gray-200 bg-gray-50/75 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                            <th class="px-4 py-3">Produit</th>
+                            <th class="px-4 py-3">Catégorie</th>
+                            <th class="px-4 py-3">Prix</th>
+                            <th class="px-4 py-3">Stock</th>
+                            <th class="px-4 py-3">Note</th>
+                            <th class="px-4 py-3">Tailles</th>
+                            <th class="px-4 py-3 text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-manager-products" class="divide-y divide-gray-100 text-sm"></tbody>
+                </table>
+            </div>
+            <div id="manager-empty-state" class="hidden py-12 text-center text-gray-500 text-sm">
+                Aucun produit trouvé.
+            </div>
+        </section>
+
+        <section id="modal-product"
+            class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4">
+            <div class="bg-white w-full max-w-2xl rounded-2xl shadow-xl overflow-hidden max-h-[90vh] flex flex-col">
+                <div class="flex justify-between items-center px-6 py-4 border-b border-gray-100">
+                    <h2 id="modal-product-title" class="text-xl font-bold text-gray-900">Ajouter un produit</h2>
+                    <button id="btn-close-modal"
+                        class="text-gray-400 hover:text-gray-600 cursor-pointer text-2xl font-bold leading-none">&times;</button>
+                </div>
+                <form id="form-product" class="overflow-y-auto p-6 space-y-4">
+
+                    <input type="hidden" id="input-product-id">
+
+                    <div id="form-product-error"
+                        class="hidden text-sm text-red-600 bg-red-50 p-3 rounded-lg border border-red-200">
+                    </div>
+
+                    <div>
+                        <label for="input-product-name" class="block text-sm font-medium text-gray-700 mb-1">Nom du
+                            produit</label>
+                        <input id="input-product-name" type="text"
+                            class="w-full p-2.5 bg-white rounded-lg border border-gray-200 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-100 shadow-2xs focus:outline-none text-sm"
+                            placeholder="ex: Nutella Hazelnut Spread 750g" required>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="select-product-form-category"
+                                class="block text-sm font-medium text-gray-700 mb-1">Catégorie</label>
+                            <select id="select-product-form-category"
+                                class="w-full p-2.5 bg-white rounded-lg border border-gray-200 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-100 shadow-2xs focus:outline-none text-sm"
+                                required>
+                                <option value="">Sélectionner une catégorie</option>
+                                <option value="Food & Grocery">Food & Grocery</option>
+                                <option value="Baby Care">Baby Care</option>
+                                <option value="Kitchen">Kitchen</option>
+                                <option value="Office & Ergonomics">Office & Ergonomics</option>
+                                <option value="Beverages">Beverages</option>
+                                <option value="Smart Home & Security">Smart Home & Security</option>
+                                <option value="Cameras & Drones">Cameras & Drones</option>
+                                <option value="Health & Fitness">Health & Fitness</option>
+                                <option value="Outdoor & Camping">Outdoor & Camping</option>
+                                <option value="Power & Accessories">Power & Accessories</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="input-product-price" class="block text-sm font-medium text-gray-700 mb-1">Prix
+                                unitaire (DH)</label>
+                            <input id="input-product-price" type="number" step="0.01"
+                                class="w-full p-2.5 bg-white rounded-lg border border-gray-200 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-100 shadow-2xs focus:outline-none text-sm"
+                                placeholder="ex: 59.90" required>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="input-product-count" class="block text-sm font-medium text-gray-700 mb-1">Stock
+                                (Quantité)</label>
+                            <input id="input-product-count" type="number"
+                                class="w-full p-2.5 bg-white rounded-lg border border-gray-200 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-100 shadow-2xs focus:outline-none text-sm"
+                                placeholder="ex: 30" required>
+                        </div>
+                        <div>
+                            <label for="input-product-stars"
+                                class="block text-sm font-medium text-gray-700 mb-1">Évaluation (0 à 5)</label>
+                            <input id="input-product-stars" type="number" step="0.1" min="0" max="5"
+                                class="w-full p-2.5 bg-white rounded-lg border border-gray-200 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-100 shadow-2xs focus:outline-none text-sm"
+                                placeholder="ex: 4.8" required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="input-product-image" class="block text-sm font-medium text-gray-700 mb-1">URL de
+                            l'image (optionnel)</label>
+                        <input id="input-product-image" type="text"
+                            class="w-full p-2.5 bg-white rounded-lg border border-gray-200 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-100 shadow-2xs focus:outline-none text-sm"
+                            placeholder="ex: assets/images/item_1.jpg">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Tailles disponibles</label>
+                        <div class="flex gap-4">
+                            <label class="flex items-center gap-1.5 text-sm cursor-pointer"><input type="checkbox"
+                                    name="product-size" value="S" class="accent-red-600" checked> S</label>
+                            <label class="flex items-center gap-1.5 text-sm cursor-pointer"><input type="checkbox"
+                                    name="product-size" value="M" class="accent-red-600" checked> M (+5%)</label>
+                            <label class="flex items-center gap-1.5 text-sm cursor-pointer"><input type="checkbox"
+                                    name="product-size" value="L" class="accent-red-600" checked> L (+10%)</label>
+                            <label class="flex items-center gap-1.5 text-sm cursor-pointer"><input type="checkbox"
+                                    name="product-size" value="XL" class="accent-red-600" checked> XL (+20%)</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="input-product-desc"
+                            class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                        <textarea id="input-product-desc" rows="3"
+                            class="w-full p-2.5 bg-white rounded-lg border border-gray-200 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-100 shadow-2xs focus:outline-none text-sm"
+                            placeholder="Description du produit..." required></textarea>
+                    </div>
+
+                    <div class="flex justify-end gap-3 pt-4 border-t border-gray-100">
+                        <button type="button" id="btn-cancel-modal"
+                            class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-sm font-semibold cursor-pointer">Annuler</button>
+                        <button type="submit" id="btn-submit-product"
+                            class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-lg text-sm font-semibold cursor-pointer">Enregistrer</button>
+                    </div>
+
+                </form>
+            </div>
         </section>
 
     </main>
@@ -51,4 +228,5 @@
     <script type="module" src="js/main.js"></script>
 
 </body>
+
 </html>

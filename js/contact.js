@@ -1,4 +1,5 @@
 import { getRandomUserJSON } from "./api.js";
+import { validateEmail } from "./validation.js";
 
 function setRandomUser() {
 
@@ -25,5 +26,19 @@ export function loadEventsContact() {
     btn_contact_fetch.addEventListener("click", () => {
         setRandomUser()
     })
+
+    const contact_form = document.querySelector("form");
+    if (contact_form) {
+        contact_form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const input_email = document.getElementById("input-contact-email");
+            if (input_email && !validateEmail(input_email.value)) {
+                alert("Format d'email invalide.");
+                return;
+            }
+            alert("Message envoyé avec succès !");
+            contact_form.reset();
+        })
+    }
 
 }
