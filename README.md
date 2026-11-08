@@ -10,14 +10,15 @@ auchan/
 ├── css/
 │   └── style.css               # Fichier de style (configuration Tailwind)
 └── js/
-    ├── main.js                 # Point d'entrée principal (initialisation & imports)
     ├── api.js                  # Logique de récupération des données (Fetch)
-    ├── products.js             # Logique métier : affichage, pagination, filtres et recherche
     ├── cart.js                 # Logique du panier : ajout, calcul des totaux, doublons
+    ├── contact.js              # contact page fetch data et DOM Selectors
     ├── dragDrop.js             # Gestion exclusive des événements de Glisser-Déposer
+    ├── products.js             # Logique métier : affichage, pagination, filtres et recherche
     ├── storage.js              # Interactions avec le LocalStorage (JSON.stringify / parse)
     ├── ui.js                   # Manipulation du DOM (Vue Grille/Liste, mise à jour visuelle)
     └── validation.js           # Fonctions de vérification Regex pour les formulaires
+    ├── main.js                 # Point d'entrée principal (initialisation & imports)
 ```
 ## Système de Panier Interactif :
 
